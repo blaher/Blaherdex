@@ -10,7 +10,11 @@
 
 		public function index()
 		{
-			echo 'Order page';
+			$this->load->model('order_model');
+			$aryOTOCO=$this->order_model->OTOCO('GOOG', 500, 0.2, 0.2, 3.95);
+			var_dump($aryOTOCO);
+			
+			$this->load->view('order/index');
 		}
 	}
 ?>
