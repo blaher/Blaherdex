@@ -6,3 +6,4 @@ priv
 *.plt
 /nbproject/private/
 config.php
+/config/database.php
