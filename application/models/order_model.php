@@ -91,7 +91,7 @@
 			$fltCommission
 		)
 		{
-			
+			return 'happy days';
 		}
 	}
 ?>
