@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "blaherdex";
 $route['404_override'] = '';
 
 
