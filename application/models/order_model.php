@@ -27,7 +27,8 @@
 				(
 					'stock'=>$strStock,
 					'price'=>0,
-					'type'=>'Stop',
+					'limit'=>0,
+					'type'=>'Stop Limit',
 					'duration'=>'GTC',
 					'transaction'=>'STC',
 					'qty'=>0
@@ -52,11 +53,14 @@
 			$aryOTOCO['buy']['qty']=$intStockCount;
 			$aryOTOCO['stop']['qty']=$intStockCount-1;
 			
-			$aryOTOCO['stop']['price']=floor
+			$fltPrice=floor
 			(
 				($fltStockPrice*(1-$fltStopMargin))*100
 			)/100;
+			$aryOTOCO['stop']['price']=$fltPrice;
+			$aryOTOCO['stop']['limit']=floor($fltPrice*0.9*100)/100;
 			unset($fltStockPrice);
+			
 			$fltPrice=ceil
 			(
 				(
