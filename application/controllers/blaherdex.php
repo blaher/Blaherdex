@@ -10,7 +10,9 @@
 
 		public function index()
 		{
-			$this->load->view('blaherdex/index');
+			$data['title']='BlaherDex - Stock Ratings, Trading Tools, and Financial Savings Guide';
+			
+			$this->load->view('blaherdex/index', $data);
 		}
 	}
 ?>
