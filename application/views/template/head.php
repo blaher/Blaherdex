@@ -12,7 +12,7 @@
 	
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
-	<link rel="stylesheet" type="text/css" href="/include/css/index.css" />
+	<link rel="stylesheet" type="text/css" href="/include/css/master.css" />
 	<link rel="canonical" href="http://blaherdex.blahertech.net/" />
 	
 	

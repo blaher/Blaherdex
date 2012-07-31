@@ -2,12 +2,6 @@
 <html>
 	<?php include('application/views/template/head.php'); ?>
 	<body>
-		<header>
-			<div>
-				<section>
-					<a href="/">BlaherDex</a>
-				</section>
-			</div>
-		</header>
+		<?php include('application/views/template/header.php'); ?>
 		<article>
 			
