@@ -10,6 +10,12 @@
 		
 		public function index()
 		{
+			$data=array();
+			$data['title']='BlaherDex - Guide';
+			$data['description']='';
+			$data['keywords']='';
+			$data['heading']='Guide';
+
 			$this->load->view('guide/index', $data);
 		}
 	}

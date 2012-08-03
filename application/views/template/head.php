@@ -4,8 +4,8 @@
 	
 	<meta http-equiv="content-type" name="type" content="text/html; charset=utf-8" />
 	<meta http-equiv="content-language" name="language" content="en" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
+	<meta name="description" content="<?=$description?>" />
+	<meta name="keywords" content="<?=$keywords?>" />
 	<meta name="author" content="Benjamin Jay Young" />
 	<meta name="copyright" content="Copyright 2012 BlaherTech" />
 	<meta name="robots" content="all" />

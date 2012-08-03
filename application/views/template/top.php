@@ -4,4 +4,6 @@
 	<body>
 		<?php include('application/views/template/header.php'); ?>
 		<article>
-			
+			<header>
+				<h1><?=$heading?></h1>
+			</header>

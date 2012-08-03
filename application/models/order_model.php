@@ -1,8 +1,9 @@
 <?php
+	require_once('application/libraries/order/oco.php');
+	require_once('application/libraries/order/otoco.php');
+
 	class Order_model extends CI_Model
 	{
-		public function __construct(){}
-		
 		public function OTOCO
 		(
 			$strStock,
@@ -12,53 +13,23 @@
 			$fltCommission
 		)
 		{
-			$aryOTOCO=array
-			(
-				'buy'=>array
-				(
-					'stock'=>$strStock,
-					'price'=>0,
-					'type'=>'Limit',
-					'duration'=>'GTC',
-					'transaction'=>'BTO',
-					'qty'=>0
-				),
-				'stop'=>array
-				(
-					'stock'=>$strStock,
-					'price'=>0,
-					'limit'=>0,
-					'type'=>'Stop Limit',
-					'duration'=>'GTC',
-					'transaction'=>'STC',
-					'qty'=>0
-				),
-				'limit'=>array
-				(
-					'stock'=>$strStock,
-					'price'=>0,
-					'type'=>'Limit',
-					'duration'=>'GTC',
-					'transaction'=>'STC',
-					'qty'=>0
-				)
-			);
+			$objOTOCO=new OTOCO($strStock);
 			
 			//START get stock price
 			$fltStockPrice=12.78;
 			//END get stock price
-			$aryOTOCO['buy']['price']=$fltStockPrice;
+			$objOTOCO->buy->price=$fltStockPrice;
 			
 			$intStockCount=floor($fltLimit/$fltStockPrice);
-			$aryOTOCO['buy']['qty']=$intStockCount;
-			$aryOTOCO['stop']['qty']=$intStockCount-1;
+			$objOTOCO->buy->qty=$intStockCount;
+			$objOTOCO->stop->qty=$intStockCount-1;
 			
 			$fltPrice=floor
 			(
 				($fltStockPrice*(1-$fltStopMargin))*100
 			)/100;
-			$aryOTOCO['stop']['price']=$fltPrice;
-			$aryOTOCO['stop']['limit']=floor($fltPrice*0.9*100)/100;
+			$objOTOCO->stop->price=$fltPrice;
+			$objOTOCO->stop->limit=floor($fltPrice*0.9*100)/100;
 			unset($fltStockPrice);
 			
 			$fltPrice=ceil
@@ -69,7 +40,7 @@
 					)/$intStockCount
 				)*100
 			)/100;
-			$aryOTOCO['limit']['price']=$fltPrice;
+			$objOTOCO->limit->price=$fltPrice;
 			
 			for
 			(
@@ -80,10 +51,10 @@
 			{
 				$i=0;
 			}
-			$aryOTOCO['limit']['qty']=$i;
+			$objOTOCO->limit->qty=$i;
 			unset($intStockCount, $fltPrice, $i);
 			
-			return $aryOTOCO;
+			return $objOTOCO;
 		}
 		
 		public function OCO
@@ -95,7 +66,11 @@
 			$fltCommission
 		)
 		{
-			return 'happy days';
+			$objOCO=new OTOCO($strStock);
+			
+			//TODO: Order_Model->OCO()
+			
+			return $objOCO;
 		}
 	}
 ?>
