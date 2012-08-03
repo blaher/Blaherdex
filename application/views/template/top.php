@@ -7,3 +7,4 @@
 			<header>
 				<h1><?=$heading?></h1>
 			</header>
+			<?php include('application/views/template/advertisement.php'); ?>

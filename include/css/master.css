@@ -1,6 +1,6 @@
-html {height:100%;}
+html {background-color:#1a1a1a; height:100%;}
 	body {background-attachment:fixed; background-color:#1a1a1a; background-repeat:no-repeat; color:#fff; font:14px Arial, Helvetica, sans-serif; height:100%; margin:0;
-		background:linear-gradient(#030303 100px, #1a1a1a); background:-moz-linear-gradient(#030303 100px, #1a1a1a); background:-ms-linear-gradient(#030303 100px, #1a1a1a); background:-o-linear-gradient(#030303 100px, #1a1a1a); background:-webkit-linear-gradient(#030303 100px, #1a1a1a);
+		background:linear-gradient(#030303 100px, #1a1a1a 90%); background:-moz-linear-gradient(#030303 100px, #1a1a1a 90%); background:-ms-linear-gradient(#030303 100px, #1a1a1a 90%); background:-o-linear-gradient(#030303 100px, #1a1a1a 90%); background:-webkit-linear-gradient(#030303 100px, #1a1a1a 90%);
 	}
 		header {height:80px;}
 			header div {margin:0 auto; width:960px;}
@@ -11,10 +11,17 @@ html {height:100%;}
 						header section a, header section a:link, header section a:visited {color:#fff; text-decoration:none;}
 							header section a span {color:#7ebe32}
 		article {background:#f5f5f5; box-shadow:10px 10px 15px #000; color:#1a1a1a; margin:0 auto; min-height:160px; padding:20px 10px; width:940px;}
-			h1 {background:#7ebe32; color:#f5f5f5; display:block; font-size:32px; margin:0 0 10px 0; padding:3px; text-align:center;}
+			article header {height:auto;}
+				h1 {background:#7ebe32; color:#f5f5f5; display:block; font-size:32px; margin:0 0 10px 0; padding:3px; text-align:center;}
 			a, a:link, a:visited {color:#7ebe32;}
 				a:hover, a:active {color:#666;}
+			#advertisement {float:right; width:280px;}
+				#advertisement h3 {color:#ccc; font-size:12px; margin:0 15px 2px 15px;}
+				#advertisement div {border:2px solid #ddd; border-radius:10px; margin:0 0 0 10px; padding:10px;}
 		footer {color:#666; margin:0 auto; padding:20px 5px; width:950px;}
-			footer span {color:#fff;}
 			footer a, footer a:link, footer a:visited {color:#666;}
 				footer a:hover, footer a:active {color:#7ebe32;}
+			footer span {color:#fff;}
+			footer ul {float:right; list-style:none; margin:0;}
+				footer li {}
+	.clear {clear:both;}
