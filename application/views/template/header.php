@@ -1,7 +1,9 @@
 <header>
 	<div>
 		<section>
-			<a href="/">BlaherDex</a>
+			<div>
+				<a href="/">Blaher<span>Dex</span></a>
+			</div>
 		</section>
 	</div>
 </header>

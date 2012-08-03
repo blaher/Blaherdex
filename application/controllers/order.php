@@ -16,10 +16,6 @@
 			$data['keywords']='blaherdex, stock, order, otoco, oco, advanced, tool';
 			$data['heading']='Stock Advanced Ordering Tool';
 			
-			$this->load->model('order_model');
-			$objOTOCO=$this->order_model->OTOCO('GOOG', 500, 0.2, 0.2, 3.95);
-			var_dump($objOTOCO);
-			
 			$this->load->view('order/index', $data);
 		}
 		
@@ -33,7 +29,6 @@
 			
 			$this->load->model('order_model');
 			$objOTOCO=$this->order_model->OTOCO('GOOG', 500, 0.2, 0.2, 3.95);
-			var_dump($objOTOCO);
 			
 			$this->load->view('order/index', $data);
 		}
@@ -48,7 +43,6 @@
 			
 			$this->load->model('order_model');
 			$objOCO=$this->order_model->OCO('GOOG', 500, 0.2, 0.2, 3.95);
-			var_dump($objOCO);
 			
 			$this->load->view('order/index', $data);
 		}
