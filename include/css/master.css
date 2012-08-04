@@ -4,12 +4,15 @@ html {background-color:#1a1a1a; height:100%;}
 	}
 		header {height:80px;}
 			header div {margin:0 auto; width:960px;}
-				header section {font-size:32px; font-weight:bold; text-shadow:5px 5px 5px #000; height:80px; width:320px;
+				header section {float:left; font-size:32px; font-weight:bold; text-shadow:5px 5px 5px #000; height:80px; width:320px;
 					background:linear-gradient(left, #030303 1%, #222 40%, #222 45%, #030303 99%); background:-moz-linear-gradient(left, #030303 1%, #333 40%, #333 45%, #030303 99%); background:-ms-linear-gradient(left, #030303 1%, #333 40%, #333 45%, #030303 99%); background:-o-linear-gradient(left, #030303 1%, #333 40%, #333 45%, #030303 99%); background:-webkit-linear-gradient(left, #030303 1%, #333 40%, #333 45%, #030303 99%);
 				}
-					header section div {background:url('/include/img/logo.svg') no-repeat 150px 12px; padding:20px 0 0 20px;}
+					header section div {background:url('/include/img/logo.svg') no-repeat 150px 12px; padding:20px 0 0 20px; width:300px;}
 						header section a, header section a:link, header section a:visited {color:#fff; text-decoration:none;}
 							header section a span {color:#7ebe32}
+				header nav {float:left; font-size:24px; font-weight:bold; padding:0 0 0 220px; width:420px;}
+					header nav a, header nav a:link, header nav a:visited {color:#ddd; display:block; float:left; height:40px; padding:40px 0 0 40px; text-decoration:none; text-shadow:5px 5px 5px #000;}
+						header nav a:active, header nav a:hover {color:#fff; text-shadow:none;}
 		article {background:#f5f5f5; box-shadow:10px 10px 15px #000; color:#1a1a1a; margin:0 auto; min-height:160px; padding:20px 10px; width:940px;}
 			article header {height:auto;}
 				h1 {background:#7ebe32; color:#f5f5f5; display:block; font-size:32px; margin:0 0 10px 0; padding:3px; text-align:center;}
