@@ -1,6 +1,7 @@
 <?php
 	require_once('application/libraries/order/oco.php');
 	require_once('application/libraries/order/otoco.php');
+	require_once('application/libraries/stock.php');
 
 	class Order_model extends CI_Model
 	{
@@ -14,13 +15,16 @@
 		)
 		{
 			$objOTOCO=new OTOCO($strStock);
-			
-			//START get stock price
-			$fltStockPrice=12.78;
-			//END get stock price
+
+			$objStock=new Stock($strStock);
+			$fltStockPrice=$objStock->Ask;
 			$objOTOCO->buy->price=$fltStockPrice;
 			
-			$intStockCount=floor($fltLimit/$fltStockPrice);
+			$intStockCount=(int)floor($fltLimit/$fltStockPrice);
+			if (!$intStockCount)
+			{
+				$intStockCount=1;
+			}
 			$objOTOCO->buy->qty=$intStockCount;
 			$objOTOCO->stop->qty=$intStockCount-1;
 			

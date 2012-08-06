@@ -1,12 +1,11 @@
 <?php
+	require_once('application/libraries/rest.php');
+
 	class YQL
 	{
-		public function __construct()
-		{
-			// Do I need to do anything here?
-		}
+		private $objRest;
 		
-		public function query($strQuery)
+		public function __construct($strQuery)
 		{
 			$strURL
 				='http://query.yahooapis.com/v1/public/yql?q='
@@ -15,7 +14,21 @@
 					.'&env=http%3A%2F%2Fdatatables.org%2Falltables.env'
 			;
 			
-			return $strURL;
+			$this->objRest=new RestRequest($strURL);
+		}
+		
+		public function execute()
+		{
+			$this->objRest->execute();
+		}
+		
+		public function fetchAll()
+		{
+			$objJSON=json_decode($this->objRest->getResponseBody());
+			$objResults=$objJSON->query->results;
+			unset($objJSON);
+			
+			return $objResults;
 		}
 	}
 ?>
